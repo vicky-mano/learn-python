@@ -112,3 +112,35 @@ print("Removed mark using pop:", removed_item)
 marks.clear()
 print("Original marks after clear:", marks)
 print("Marks Copy:", marks_copy)
+
+# Lesson 6C: del statement
+
+numbers = [-1, 1, 66.25, 333, 333, 1234.5]
+
+print("Original numbers:", numbers)
+
+del numbers[0]
+print("After deleting index 0:", numbers)
+
+del numbers[2:4]
+print("After deleting index 2 to 4:", numbers)
+
+del numbers[:]
+print("After deleting all items using del numbers[:]:", numbers)
+
+numbers = [-1, 1, 66.25, 333, 333, 1234.5]
+print("Numbers recreated:", numbers)
+
+del numbers
+print("The variable numbers is deleted now")
+
+expenses = [100, 250, 500, 750, 1000]
+
+del expenses[0]
+print("After deleting first expenses:", expenses)
+
+del expenses[1:3]
+print("After deleting expenses from index 1 to 3:", expenses)
+
+del expenses[:]
+print("After deleting all items using del expenses[:] :", expenses)
