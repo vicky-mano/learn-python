@@ -144,3 +144,118 @@ print("After deleting expenses from index 1 to 3:", expenses)
 
 del expenses[:]
 print("After deleting all items using del expenses[:] :", expenses)
+
+# Lesson 6D: List Comprehensions
+
+squares = []
+
+for number in range(10):
+    squares.append(number**2)
+
+print("Squares using normal for loop:", squares)
+
+squares_comprehension = [x**2 for x in range(10)]
+
+print("Squares using list Comprehensions:", squares_comprehension)
+
+cubes = []
+
+for number in range(6):
+    cubes.append(number**3)
+
+print("Cubes using normal for loop:", cubes)
+
+cubes_comprehension = [x**3 for x in range(6)]
+print("Cubes using list comprehesions:", cubes_comprehension)
+
+# Lesson 6D Continued: Filtering list comprehesions
+
+vector = [-4, -2, 0, 2, 4]
+
+doubled_vector = [x * 2 for x in vector]
+print("Doubled Vector:", doubled_vector)
+
+positive_vector = [x for x in vector if x >= 0]
+print("Positive Vector:", positive_vector)
+
+abs_vector = [abs(x) for x in vector]
+print("Absolute vector:", abs_vector)
+
+temperatures = [-5, 0, 12, 18, -2, 25]
+print("Temperatures:", temperatures)
+
+warm_temperatures = [temp for temp in temperatures if temp >= 15]
+print("Warm temperatures: ", warm_temperatures)
+
+doubled_temperatures = [temp * 2 for temp in temperatures]
+print("Doubled Temperatures: ", doubled_temperatures)
+
+# Lesson 6D continued: Calling methods iniside list comprehesions
+
+fresh_fruit = [" banana", " loganberry ", "passion fruit "]
+
+clean_fresh_fruit = [fruit.strip() for fruit in fresh_fruit]
+
+print("Fresh fruit with extra spaces: ", fresh_fruit)
+print("Clean fresh fruit: ", clean_fresh_fruit)
+
+name = [" vignesh", "swetha ", " python "]
+
+clean_name = [x.strip() for x in name]
+
+print("Name with extra spaces: ", name)
+print("Clean Name: ", clean_name)
+
+upper_case = [x.upper() for x in clean_name]
+
+print("Upper Case Name: ", upper_case)
+
+# Lesson 6D continued: Creating tuple pairs
+
+square_tuples = []
+
+for x in range(6):
+    square_tuples.append((x, x**2))
+
+print("Square tuples using normal for loop: ", square_tuples)
+
+square_tuples_comprehension = [(x, x**2) for x in range(6)]
+
+print("Sqaure tuples using list comprehension: ", square_tuples_comprehension)
+
+cube_tuples = []
+
+for x in range(6):
+    cube_tuples.append((x, x**3))
+print("Cubes using normal for loop: ", cube_tuples)
+
+cubes_tuples_comprehension = [(x, x**3) for x in range(6)]
+print("Cubes tuples using list comprehension: ", cubes_tuples_comprehension)
+
+# Lesson 6D continued: Flattening nested list
+
+vector = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+flatten_vector = []
+
+for elem in vector:
+    for num in elem:
+        flatten_vector.append(num)
+
+print("Flatten vector using normal for loop: ", flatten_vector)
+
+flatten_vector_comprehension = [num for elem in vector for num in elem]
+
+print("Flatten vector using list comprehension: ", flatten_vector_comprehension)
+
+groups = [[10, 20], [30, 40], [50, 60]]
+
+flatten_groups = []
+
+for x in groups:
+    for y in x:
+        flatten_groups.append(y)
+print("Flatten group using normal for loop: ", flatten_groups)
+
+flatten_groups_comprehension = [y for x in groups for y in x]
+print("Flatten groups using list comprehension: ", flatten_groups_comprehension)
