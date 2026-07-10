@@ -259,3 +259,40 @@ print("Flatten group using normal for loop: ", flatten_groups)
 
 flatten_groups_comprehension = [y for x in groups for y in x]
 print("Flatten groups using list comprehension: ", flatten_groups_comprehension)
+
+# Lesson 6E: Nested list comprehension
+
+matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+
+print("Original Matrix: ", matrix)
+
+transposed = []
+
+for i in range(4):
+    transposed_row = []
+
+    for row in matrix:
+        transposed_row.append(row[i])
+    transposed.append(transposed_row)
+
+print("Transposed matrix using normal for loop: ", transposed)
+
+transposed_matrix = [[row[i] for row in matrix] for i in range(4)]
+
+print("Transposed matrix using nested list comprehension: ", transposed_matrix)
+
+scores = [[80, 90], [70, 85], [60, 75]]
+
+transposed_score = []
+
+for i in range(2):
+    transposed_score_row = []
+
+    for row in scores:
+        transposed_score_row.append(row[i])
+    transposed_score.append(transposed_score_row)
+
+print("Transposed scores using normal loop: ", transposed_score)
+
+transposed_score_comprehension = [[row[i] for row in scores] for i in range(2)]
+print("Transposed scores using list comprehension: ", transposed_score_comprehension)
